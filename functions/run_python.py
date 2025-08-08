@@ -38,9 +38,9 @@ def run_python_file(working_directory, file_path, args=[]):
             return "Process exited with code {return_code}"
 
         return{
-            f"STDOUT:{result.stdout}",
-            f"STDERR:{result.stderr}",
-            f"returncode:{result.returncode}"
+            f"STDOUT": result.stdout,
+            f"STDERR": result.stderr,
+            f"returncode": result.returncode
         }
 
     except Exception as e:
