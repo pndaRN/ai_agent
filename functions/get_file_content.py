@@ -1,4 +1,4 @@
-from functions.config import MAX_CHARS
+from config import MAX_CHARS
 import os
 from google.genai import types
 
@@ -19,10 +19,10 @@ def get_file_content(working_directory, file_path):
     try:
 
         with open(abs_full_path, 'r', encoding="utf-8") as f:
-            content = f.read(config.MAX_CHARS + 1)
+            content = f.read(MAX_CHARS + 1)
 
-        if len(content) > config.MAX_CHARS:
-            content = content[:config.MAX_CHARS] + f'[...File "{file_path}" truncated at {config.MAX_CHARS} characters]'
+        if len(content) > MAX_CHARS:
+            content = content[:MAX_CHARS] + f'[...File "{file_path}" truncated at {MAX_CHARS} characters]'
 
         return content
 

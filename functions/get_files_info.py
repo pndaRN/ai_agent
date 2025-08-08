@@ -9,7 +9,7 @@ def get_files_info(working_directory, directory = "."):
         abs_full = os.path.abspath(full_directory)
         abs_working = os.path.abspath(working_directory)
 
-        if not (abs_full.startswith(abs_working + os.sep) or abs_full != abs_working):
+        if not abs_full.startswith(abs_working):
             return f'Error, Cannot list "{directory}" as it is an outside the permitted working directory'
 
         if not os.path.exists(full_directory):
